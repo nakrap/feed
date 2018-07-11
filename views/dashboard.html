@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Feed Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+    body {
+    font-size: .875rem;
+    font-family: 'Montserrat', sans-serif;
+    }
+  
+    .feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+    }
+  
+    .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100; 
+    padding: 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    }
+  
+    .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 48px; 
+    height: calc(100vh - 48px);
+    padding-top: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto; 
+    }
+  
+    .sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+    }
+  
+    .sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #999;
+  }
+  
+    .sidebar .nav-link.active {
+    color: #007bff;
+    }
+  
+    .sidebar .nav-link:hover .feather,
+    .sidebar .nav-link.active .feather {
+    color: inherit;
+    }
+  
+    .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+    }
+  
+    .navbar-brand {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .25);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+    }
+  
+    .navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+    }
+  
+    .form-control-dark {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .1);
+    }
+  
+    .form-control-dark:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+    }
+  
+    .border-top { border-top: 1px solid #e5e5e5; }
+    .border-bottom { border-bottom: 1px solid #e5e5e5; }
+    
+    </style>
+</head>
+<body>
+    <!--Top Navbar-->
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">FEED Icon</a>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out <span data-feather="log-out"></span></a>
+          </li>
+        </ul>
+      </nav>
+      
+      <!--Side Navbar-->
+      <div class="container-fluid">
+        <div class="row">
+          <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    <span data-feather="home"></span>
+                    Dashboard <span class="sr-only"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="users"></span>
+                    Profile
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    <span data-feather="file-text"></span>
+                    Meal Preferences
+                  </a>
+                </li>
+            </div>
+          </nav>
+          
+          <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+              <h1 class="h2">Enter Your Meal Preferences </h1>
+            </div>
+            <!--User Inputs Meal Preferences-->
+                <div id="inputmeals">
+                <form action="/meals/create" method="POST">
+				<input type="text" class="form-control" name="meal_name" value="" id="enter_text"><br>
+				<button type="submit" class="btn btn-default" id="text-enter-button">Submit</button><br>
+                </form>
+                </div>
+            
+             <!--Premade list of meals from the database-->
+                <h2>Pre-made List of Meal Preferences</h2><hr>
+                <p>Fried Chicken</p> 
+                <div id="premademeals">
+                <form class="meal-form button-size">
+                <input input type="hidden" class="meal_id" type="text" value=""><br>
+                <button type="submit" class="btn btn-default">Add to my meal preferences!</button><br>
+                </form>
+                </div>
+            
+            <!--Randomly generated meals from the database-->
+                <h2>7-day Meal Plan</h2><hr>
+                <div id="generatedmeals">
+                <form class="meal-form button-size">
+                <button type="submit" class="btn btn-default">Generate my meal plan!</button>
+                </form>
+                </div>    
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- Icons -->
+      <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+      <script>
+        feather.replace()
+      </script>
+</body>
+</html>
