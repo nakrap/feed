@@ -71,13 +71,6 @@
         2. Click Send to send the request
         3. The response should be in the body section
 
-    GET By id:
-        1. Select GET from the button in the top left (to use get route)
-        2. Add in the user id to the route localhost:8080/api/meals/Meal_Id_Here
-            example: localhost:8080/api/meals/1
-        3. Click Send to send the request
-        4. The response should be in the body section
-
     DELETE By Id: 
         1. Select DELETE from the button in the top left (to use get route)
         2. Change the query string from localhost:8080/api/meals to localhost:8080/api/meal/The_Meal_ID
