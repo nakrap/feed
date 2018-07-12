@@ -1,12 +1,14 @@
-1. cd into the directory of the project
-2. in you terminal run: npm i
-3. if there is an error run npm i bcrypt@2.0.1 
+1. Go into the ./config/config.json file and change the password to your own
+2. Run the schema.sql file in your MySQL Workbench
+3. cd into the directory of the project
+4. in you terminal run: npm i
+5. if there is an error run npm i bcrypt@2.0.1 
     and then again run npm i
-4. run export pj_two_jwtPrivateKey=aSecureKey
-5. run npm start (your server is now started)
-6. open postman
+6. run export pj_two_jwtPrivateKey=aSecureKey
+7. run npm start (your server is now started)
+9. open postman
 
-7. for route localhost:8080/api/users  :
+9. for route localhost:8080/api/users  :
     **POST:
         1. Select POST from the button in the top left (to use post route)
         2. Then click "Body" in the top navbar
@@ -50,7 +52,7 @@
             "password": "Banan1234?"
         }
 
-8. for route localhost:8080/api/meals  :
+10. for route localhost:8080/api/meals  :
     POST:
         1. Select POST from the button in the top left (to use post route)
         2. Then click "Body" in the top navbar
@@ -78,30 +80,30 @@
         3. Click Send to send the request
         4. the response should be: 1
     
-    9. for route localhost:8080/api/auth : 
-        POST: 
-            1. Execute the first post route for localhost:8080/api/users (starred)
-            2. Navigate the the Headers tab **-On the Bottom.
-            3. At the bottom you will see x-auth-token
-            4. Copy the long string value **(JSONWebToken)
-                example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzEyODExMTl9.uGFHa7rHnJvzUqRKLnDvAn_-RW6mUk-TYuL3rcySKBE
-            5. Select POST from the button in the top left (to use post route)
-            6. Make sure the route is set to localhost:8080/api/auth
-            7. Go to the headers tab **-At the Top.
-            8. Add a key of x-auth token
-               And a value of the long string value (The **JSONWebToken)
-            9. Then click "Body" in the top navbar
-            10. click "raw" and change the "Text" to "JSON"
-            11. Then add in the password and email 
-                example: 
-                {
-                    "email": "email@email.com",
-                    "password": "America1776!"
-                }
-            12. Click Send to send the request
-            13. The response should be another JSONWebToken 
-                example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzEyODE2MzB9.aHpQ1C-XjVvQgOtsy66E8PGt2WXQxOp9Un7Jd3g5Fiw
-            14. YOU'RE DONE!!! 
+11. for route localhost:8080/api/auth : 
+    POST: 
+        1. Execute the first post route for localhost:8080/api/users (starred)
+        2. Navigate the the Headers tab **-On the Bottom.
+        3. At the bottom you will see x-auth-token
+        4. Copy the long string value **(JSONWebToken)
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzEyODExMTl9.uGFHa7rHnJvzUqRKLnDvAn_-RW6mUk-TYuL3rcySKBE
+        5. Select POST from the button in the top left (to use post route)
+        6. Make sure the route is set to localhost:8080/api/auth
+        7. Go to the headers tab **-At the Top.
+        8. Add a key of x-auth token
+            And a value of the long string value (The **JSONWebToken)
+        9. Then click "Body" in the top navbar
+        10. click "raw" and change the "Text" to "JSON"
+        11. Then add in the password and email 
+            example: 
+            {
+                "email": "email@email.com",
+                "password": "America1776!"
+            }
+        12. Click Send to send the request
+        13. The response should be another JSONWebToken 
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1MzEyODE2MzB9.aHpQ1C-XjVvQgOtsy66E8PGt2WXQxOp9Un7Jd3g5Fiw
+        14. YOU'RE DONE!!! 
 
 
         
