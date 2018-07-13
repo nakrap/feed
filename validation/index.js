@@ -5,12 +5,11 @@ const PasswordComplexity = require('joi-password-complexity');
 
 exports.validateUser = function validateUser(User) {
     const complexityOptions = {
-        min: 10,
+        min: 6,
         max: 30,
         lowerCase: 1,
         upperCase: 1,
         numeric: 1,
-        symbol: 1,
         requirementCount: 2,
       }
     var schema = {

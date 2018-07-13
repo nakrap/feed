@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.use(express.static("public"));
 
-app.use('/api/meals',meal);
+app.use('/api/meals', meal);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
 
