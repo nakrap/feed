@@ -28,6 +28,8 @@ var _ = require('lodash');
   // Working
   router.get("/:id", function(req, res) {
 
+    console.log("req", req)
+
     try {
       db.User.findOne({
         where: {
@@ -72,6 +74,7 @@ var _ = require('lodash');
   
     const token = generateAuthToken(user.id);
     res.header('x-auth-token', token).send(_.pick(user, ['id', 'name', 'email']));
+
   });
 // Working
   router.put("/", function(req, res) {
