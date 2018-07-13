@@ -1,5 +1,7 @@
 1. Go into the ./config/config.json file and change the password to your own
+2. Go to the ./routes/mealMaster.js file and change the password to your own
 2. Run the schema.sql file in your MySQL Workbench
+3. Import the meals.csv file into your meal_master table.
 3. cd into the directory of the project
 4. in you terminal run: npm i
 5. if there is an error run npm i bcrypt@2.0.1 
