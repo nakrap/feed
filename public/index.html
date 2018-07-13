@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FEED</title>
+    <title>FEED HOMEPAGE</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,8 @@
     
     <!-- Custom styles for this template -->
     <link href="css/grayscale.min.css" rel="stylesheet">
-    
+
+    <link href="css/grayscale.css" rel="stylesheet">
   </head>
   
   <body id="page-top">
@@ -37,13 +38,7 @@
             
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#projects">Delicious Choices</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#signup">7 Meals</a>
+              <a class="nav-link js-scroll-trigger" href="#signup">About Us</a>
             </li>
           </ul>
         </div>
@@ -55,7 +50,7 @@
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-          <img src = "img/croppedfeedlogo.jpg" alt = "Feed Logo" height = "200px" width = "200px">
+          <img src = "img/feedlogo.png" alt = "Feed Logo" height = "200px" width = "200px">
           <br><br>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">A 7 day meal plan generator based on your preferences</h2>
           <a href="#about" class="btn btn-primary js-scroll-trigger" id="loginBtn">Login/Sign Up</a>
@@ -63,7 +58,7 @@
       </div>
     </header>
 
-    <!-- About Section -->   
+ 
     <!-- LOGIN/SIGNUP PAGE: PUT IN LOGIN FORMS HERE / TOGGLE BETWEEN LOGIN AND SIGNUP-->
     <section id="about" class="about-section text-center">
 
@@ -76,18 +71,16 @@
                 <form action="/">
                   <div class="form-group">
                     <label for="email">Email:</label>
-                      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                      <input type="email" class="form-control" id="loginName" placeholder="Enter email" name="email">
+                      <p class="help is-danger" style="display: none" id="loginNameHelp">This field is required</p>
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-                </div>
-                <div class="checkbox">
-                    <label><input type="checkbox" name="remember"> Remember me</label>
+                  <input type="password" class="form-control" id="loginPassword" placeholder="Enter password" name="pwd">
+                  <p class="help is-danger" style="display: none" id="loginPassword">This field is required</p>
                 </div>
                 <a id="signup" class= "js-scroll-triggerTwo" href="#registration-form">Sign Up</a> 
-                
-                <button type="submit" class="btn btn-default">Login</button>
+                <button type="submit" class="btn btn-default" id="submits">Login</button>
               </form>
             </div>
                                                               
@@ -95,18 +88,36 @@
               <div id="registration-form" class="tab-pane fade">
                   <form action="/">
                       <div class="form-group">
-                          <label for="name">Your Name:</label>
-                          <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                          <label for="name">First Name</label>
+                          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" name="name">
+                          <p class="help is-danger" style="display: none" id="firstNameHelp">This field is required</p>
+                      </div>
+                      <div class="form-group">
+                        <label for="name">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" name="name">
+                        <p class="help is-danger" style="display: none" id="lastNameHelp">This field is required</p>
                       </div>
                       <div class="form-group">
                           <label for="newemail">Email:</label>
-                          <input type="email" class="form-control" id="newemail" placeholder="Enter new email" name="newemail">
+                          <input type="email" class="form-control" id="emailInput" placeholder="Enter new email" name="newemail">
+                          <p class="help is-danger" style="display: none" id="emailInputHelp">This field is required</p>
                       </div>
                       <div class="form-group">
-                          <label for="newpwd">Password:</label>
-                          <input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
+                        <label for="newemail">Confirm Email:</label>
+                        <input type="email" class="form-control" id="confirmSignupEmail" placeholder="Confirm your email" name="newemail">
+                        <p class="help is-danger" style="display: none" id="confirmSignupEmailHelp">This field is required</p>
                       </div>
-                          <button type="submit" class="btn btn-default">Register</button>
+                      <div class="form-group">
+                        <label for="newpwd">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="New password" name="newpwd">
+                        <p class="help is-danger" style="display: none" id="passwordHelp">This field is required</p>
+                      </div>
+                      <div class="form-group">
+                        <label for="newpwd">Confirm Password:</label>
+                        <input type="password" class="form-control" id="passwordConf" placeholder="Confirm your password" name="newpwd">
+                        <p class="help is-danger" style="display: none" id="passwordConfHelp">This field is required</p>
+                      </div>
+                        <button type="submit" class="btn btn-default" id="register">Register</button>
                   </form>
               </div>
             </div>
@@ -117,180 +128,24 @@
 
  
     </section>
+ 
+                                                          
 
-    <!-- Projects Section -->
-    <!--DASHBOARD DELICIOUS CHOICES LIST-->
-    <section id="projects" class="projects-section bg-light">
-      <div class="container">
-
-
-
-        <!-- Project One Row -->
-        <!-- USER MEAL ENTRY PAGE: FORM THAT ADDS TO USER SPECIFIC LIST-->
-        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-          <div class="col-lg-6">
-            <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
-          </div>
-          <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <h4 class="text-white">Choose from our favorite meals</h4>
-                  <p class="mb-0 text-white-50">
-                    <div class="list-group">
-                      <a href="#" class="list-group-item list-group-item-action">Noodle and Vegetable Stir Fry</a>
-                      <a href="#" class="list-group-item list-group-item-action">Fettucini Alfredo</a>
-                      <a href="#" class="list-group-item list-group-item-action">Steak and Potatoes</a>
-                      <a href="#" class="list-group-item list-group-item-action disabled">Lamb Vindaloo</a>
-                    </div>
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0">
-                </div>  
-              </div>
-            </div>
-          </div>
-        </div>
-        <br><br>
-        <!-- Project Two Row -->
-        <!-- USER SPECIFIC LIST PAGE: LIST OF USER PREFERENCES THAT WERE ADDED FROM PREMADE LIST AND THEIR ENTRY LIST -->        
-        <div class="row justify-content-center no-gutters">
-          <div class="col-lg-6">
-            <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
-          </div>
-          <div class="col-lg-6 order-lg-first">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-right">
-                  <h4 class="text-white">Add your own favorite meal</h4>
-                  <p class="mb-0 text-white-50">
-                    <form>
-                      <div class="form-group">
-                        <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="(i.e. Steak Enchiladas) Add one meal at a time up to as many times as you want!"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 7 DAY MEAL PLAN BUTTON: RANDOM 7 DAY MEAL PLAN LIST ON CLICK  -->
-      </div>
-    </section>
-
-    <!-- Featured Project Row -->
-    <!-- DELICOUS CHOICES LIST WITH ADD BUTTON TO PUT INTO USER SPECIFIC LIST-->
-    <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-      <div class="col-xl-8 col-lg-7">
-        <img class="img-fluid mb-3 mb-lg-0" src="img/bg-masthead.jpg" alt="">
-      </div>
-      <div class="col-xl-4 col-lg-5">
-        <div class="featured-text text-center text-lg-left">
-          <h4> Your List </h4>
-          <p class="text-black-50 mb-0">
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Jamabalaya</li>
-                  <li class="list-group-item">Chicken and Rice</li>
-                  <li class="list-group-item">Noodle and Vegetable Stir Fry</li>
-                  <li class="list-group-item">Shepherd's Pie</li>
-                  <li class="list-group-item">Chili</li>
-                </ul>
-                <br>
-                <button type="submit" class="btn btn-primary mx-auto">Generate 7 Meals</button>
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- Signup Section -->
-    <!-- 7 DAY MEAL PLAN PAGE: -->
-    <section id="signup" class="signup-section">
+    <!-- About Section -->
+    <section id="about" class="about-section sectionTwo text-center">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 col-lg-8 mx-auto text-center">
-            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">Below is your random 7 day meal plan!</h2>
-         
-             <div class = "row rowOne">
-                <div class="card col-md-3" style="width: 18rem;">
-                  <img class="card-img-top" height="180px" width="100px" src="img/graysand.png" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">MON</h5>
-                    <p class="card-text">Spaghetti & Meatballs</p>
-                    <a href="#" class="btn btn-primary">Recipe</a>
-                  </div>
-                </div>
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/greyfloral.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">TUES</h5>
-                      <p class="card-text">Philadelphia Roll</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
-                    </div>
-                </div>
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/linen.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">WED</h5>
-                      <p class="card-text">Cheeseburger & Fries</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
-                    </div>
-                </div>
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/retro.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">THURS</h5>
-                      <p class="card-text">Pepperoni Pizza</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
-                    </div>
-                </div>
-              </div>
-              <br>
-              <div class = "row rowTwo">
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/pattern.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">FRI</h5>
-                      <p class="card-text">Shrimp Fried Rice</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
-                    </div>
-                </div>
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/square.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">SAT</h5>
-                      <p class="card-text">Seafood Paella</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
-                    </div>
-                </div>
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/light.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">SUN</h5>
-                      <p class="card-text"> Lobster & Butter Roll</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
-                    </div>
-                </div>
-                <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/triangle.png" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">NOPE?</h5>
-                      <p class="card-text">Click Again! to Regenerate</p>
-                      <a href="#" class="btn btn-primary">Again!</a>
-                      <!-- <button type="submit" class="btn btn-primary mx-auto">Regenerate</button>   -->
-                    </div>
-                </div>
-
-
-              </div>
+          <div class="col-lg-8 mx-auto">
+            <h2 class="text-white mb-4">Welcome to FEED</h2>
+            <p class="text-white-50">Never worry about what to eat for the entire week again</p>
           </div>
         </div>
       </div>
     </section>
+    
 
     <!-- Contact Section -->
-    <section class="contact-section bg-black">
+    <section class="contact-section bg-light">
       <div class="container">
 
         <div class="row">
@@ -301,7 +156,7 @@
                 <i class="fas fa-map-marked-alt text-primary mb-2"></i>
                 <h4 class="text-uppercase m-0">Address</h4>
                 <hr class="my-4">
-                <div class="small text-black-50">Northwester University Technology Building</div>
+                <div class="small text-black-50">Northwestern University Technology Building</div>
               </div>
             </div>
           </div>
@@ -347,9 +202,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black small text-center text-white-50">
+    <footer class="bg-light small text-center text-white-50">
       <div class="container">
-        Copyright &copy; Your Website 2018
+        Copyright &copy; feed 2018
       </div>
     </footer>
 
