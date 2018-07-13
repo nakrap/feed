@@ -15,7 +15,7 @@ exports.validateUser = function validateUser(User) {
     var schema = {
         name: Joi.string().min(3).max(255).required(),
         email: Joi.string().min(3).max(255).email().required(),
-        password: Joi.string().min(10).max(30).required()
+        password: Joi.string().min(6).max(30).required()
     }
     return Joi.validate(User,schema) && Joi.validate(User.password, new PasswordComplexity(complexityOptions))
 }
