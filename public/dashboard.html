@@ -81,11 +81,7 @@
                 <div class="project-text w-100 my-auto text-center text-lg-left">
                   <h4 class="text-white">Choose from our favorite meals</h4>
                   <p class="mb-0 text-white-50">
-                    <div class="list-group">
-                      <a href="#" class="list-group-item list-group-item-action">Noodle and Vegetable Stir Fry</a>
-                      <a href="#" class="list-group-item list-group-item-action">Fettucini Alfredo</a>
-                      <a href="#" class="list-group-item list-group-item-action">Steak and Potatoes</a>
-                      <a href="#" class="list-group-item list-group-item-action disabled">Lamb Vindaloo</a>
+                    <div class="list-group" id="foods">
                     </div>
                   </p>
                   <hr class="d-none d-lg-block mb-0 ml-0">
@@ -135,15 +131,15 @@
         <div class="featured-text text-center text-lg-left">
           <h4> Your List </h4>
           <p class="text-black-50 mb-0">
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Jamabalaya</li>
+              <ul class="list-group list-group-flush" id="yourMealList">
+                  <!-- <li class="list-group-item">Jamabalaya</li>
                   <li class="list-group-item">Chicken and Rice</li>
                   <li class="list-group-item">Noodle and Vegetable Stir Fry</li>
                   <li class="list-group-item">Shepherd's Pie</li>
-                  <li class="list-group-item">Chili</li>
+                  <li class="list-group-item">Chili</li> -->
                 </ul>
                 <br>
-                <button type="submit" class="btn btn-primary mx-auto">Generate 7 Meals</button>
+                <button type="submit" class="btn btn-primary mx-auto" id="genSeven">Generate 7 Meals</button>
           </p>
         </div>
       </div>
@@ -309,6 +305,9 @@
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>
 
+    <!-- Routes -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/dashboard.js"></script>
   </body>
 
 </html>
