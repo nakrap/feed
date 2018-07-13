@@ -10,7 +10,7 @@ $('#register').on('click', function(event) {
     .val()
     .trim();
 
-  var fullName = firstName + lastName;
+  var fullName = firstName + ' ' + lastName;
 
   var email = $('#emailInput')
     .val()

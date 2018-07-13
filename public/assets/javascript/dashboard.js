@@ -36,11 +36,13 @@ $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
   }
 });
 
-$.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
-  const currentMeals = [];
-  for (var i = 0; i < data.Meals.length; i++) {
-    currentMeals.push(data.Meals[i].meal);
-  }
-  currentMeals.join(' ');
-  console.log(currentMeals);
+$('#genSeven').on('click', function(e) {
+  e.preventDefault();
+  $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+    for (var i = 0; i < data.Meals.length; i++) {
+      const mealsList =
+        data.Meals[i][Math.floor(Math.random(data.Meals.length * 7) + 1)];
+      console.log(mealsList);
+    }
+  });
 });
