@@ -11,6 +11,9 @@
     "node": "10.6.1",
     "npm": "6.0.1"
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nakrap/feed.git"
