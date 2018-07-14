@@ -52,14 +52,14 @@ $('#genSeven').on('click', function(e) {
     for (var i = 0; i < data.Meals.length; i++) {
       mealsArray.push(data.Meals[i].meal);
     }
-    console.log(mealsArray);
-    // const generatedMeals = () => {
-    //   mealsArray[Math.floor(Math.random() * mealsArray.length)];
-    // };
-    // for (var j = 0; j < 7; j++) {
-    //   console.log(generatedMeals[j]);
-    // }
-
-    // console.log(generatedMeals);
+    const currentMeals = [];
+    const generatedMeals = () => {
+      const aMeal = mealsArray[Math.floor(Math.random() * mealsArray.length)];
+      currentMeals.push(aMeal);
+    };
+    for (var j = 0; j < 7; j++) {
+      generatedMeals();
+    }
+    console.log(currentMeals);
   });
 });
