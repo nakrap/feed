@@ -1,3 +1,11 @@
+
+//Global Variables:
+var meal = [];
+var newMeal = [];
+var userMeal = [];
+
+
+
 // GET
 $.get('/api/mealMaster', function(data) {
   for (var i = 0; i < data.length; i++) {
@@ -33,16 +41,25 @@ $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
       .addClass('list-group-item')
       .text(data.Meals[i].meal);
     $('#yourMealList').append(yourMeals);
+    console.log(yourMeals);
   }
 });
 
 $('#genSeven').on('click', function(e) {
   e.preventDefault();
   $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+    let mealsArray = [];
     for (var i = 0; i < data.Meals.length; i++) {
-      const mealsList =
-        data.Meals[i][Math.floor(Math.random(data.Meals.length * 7) + 1)];
-      console.log(mealsList);
+      mealsArray.push(data.Meals[i].meal);
     }
+    console.log(mealsArray);
+    // const generatedMeals = () => {
+    //   mealsArray[Math.floor(Math.random() * mealsArray.length)];
+    // };
+    // for (var j = 0; j < 7; j++) {
+    //   console.log(generatedMeals[j]);
+    // }
+
+    // console.log(generatedMeals);
   });
 });
