@@ -27,7 +27,9 @@ $('#register').on('click', function(event) {
 
   $.post('/api/users', user, function(data) {
     // console.log(req.get('x-auth-token'));
-    console.log(data);
+    // localStorage.setItem('mike', req.get('x-auth-token'));
+    // console.log('loggin in');
+    // console.log(data);
     localStorage.removeItem('id');
     localStorage.setItem('id', data.id);
     $('#name-display').text(data.name);
