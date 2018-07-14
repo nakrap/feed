@@ -19,7 +19,7 @@
           1000,
           "easeInOutExpo"
         );
-        return false;
+        return false; 
       }
     }
   });
@@ -58,6 +58,8 @@ $("#loginBtn").on("click", function() {
 $("#signup").on("click", function() {
   $("#login-form").addClass("tab-pane fade in active");
   $("#registration-form").removeClass("tab-pane fade");
+  // $("#registration-form").addClass("padding-top: 100px");
+
 
   // Smooth scrolling using jQuery easing
   $('a.js-scroll-triggerTwo[href*="#"]:not([href="#"])').click(function() {
