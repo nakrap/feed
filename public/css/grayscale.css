@@ -160,7 +160,7 @@
 
 .about-section {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, rgb(140,106,78) 0%, rgba(140,106,78, 0.9) 75%, rgba(140,106,78, 0.8) 100%);
+  background: linear-gradient(to bottom, rgb(140,106,78) 0%, rgba(140,106,78, 0.9) 19%, rgba(140,106,78, 0.8) 100%),url("../img/hip-square.png");
 }
 
 .about-section p {
@@ -169,7 +169,7 @@
 
 .sectionTwo {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, rgba(140,106,78,0.8) 0%, rgba(140,106,78,0.8) 75%, rgb(140,106,78) 100%);
+  background: linear-gradient(to bottom, rgba(140,106,78,0.8) 0%, rgba(140,106,78,0.8) 75%, rgb(140,106,78) 100%),url("../img/hip-square.png");
 }
 
 .sectionTwo {
@@ -182,6 +182,24 @@
 
 .projects-section .featured-text {
   padding: 2rem;
+}
+
+#foods {
+  width: 400px;
+  height: 300px;
+  overflow: scroll;
+}
+
+#foods::-webkit-scrollbar {
+  width: 10px;
+}
+
+#foods::-webkit-scrollbar-thumb {
+  background: rgba(140,106,78,0.5); 
+}
+
+#foods::-webkit-scrollbar-thumb:hover {
+  background: rgba(203,25,25,0.5); 
 }
 
 @media (min-width: 992px) {
@@ -205,6 +223,40 @@
     border-width: .25rem;
     width: 30%;
   }
+}
+
+#yourList {
+  margin-left: 20px;
+}
+
+#yourMealList {
+  width: 450px;
+  height: 1200px;
+  overflow: scroll;
+}
+
+#yourMealList::-webkit-scrollbar {
+  width: 10px;
+}
+
+#yourMealList::-webkit-scrollbar-thumb {
+  background: rgba(140,106,78,0.5); 
+}
+
+#yourMealList::-webkit-scrollbar-thumb:hover {
+  background: rgba(203,25,25,0.5); 
+}
+
+#genSeven {
+  border-left: 20px solid;
+}
+
+.showSevenIcon {
+  color: rgba(140,106,78,0.8);
+}
+
+#showSeven {
+  color: rgba(140,106,78,0.8);
 }
 
 .signup-section {
@@ -244,6 +296,28 @@
   width: 3rem;
 }
 
+.card-img-top {
+  margin-top: 15px;
+}
+
+.card {
+  border: solid rgba(140,106,78,0.1);
+}
+
+#choiceName {
+  margin-top: 40px;
+  height: 80px; 
+}
+
+#recipeBtn {
+  padding-left: 32px;
+  padding-right: 25px;
+}
+
+#genAgain {
+  background-color: rgba(203,25,25,0.5);
+}
+
 .contact-section .social {
   margin-top: 5rem;
 }
@@ -252,10 +326,10 @@
   text-align: center;
   height: 3rem;
   width: 3rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(140,106,78, 0.1);
   border-radius: 100%;
   line-height: 3rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(140,106,78, 0.5);
 }
 
 .contact-section .social a:hover {
@@ -296,6 +370,9 @@ a:focus, a:hover {
   color: rgb( 253,182,131) !important;
 }
 
+
 footer {
   padding: 5rem 0;
+  color: rgb(140,106,78) !important;
 }
+
