@@ -39,10 +39,18 @@ $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
 $('#genSeven').on('click', function(e) {
   e.preventDefault();
   $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+    let mealsArray = [];
     for (var i = 0; i < data.Meals.length; i++) {
-      const mealsList =
-        data.Meals[i][Math.floor(Math.random(data.Meals.length * 7) + 1)];
-      console.log(mealsList);
+      mealsArray.push(data.Meals[i].meal);
     }
+    const currentMeals = [];
+    const generatedMeals = () => {
+      const aMeal = mealsArray[Math.floor(Math.random() * mealsArray.length)];
+      currentMeals.push(aMeal);
+    };
+    for (var j = 0; j < 7; j++) {
+      generatedMeals();
+    }
+    console.log(currentMeals);
   });
 });
