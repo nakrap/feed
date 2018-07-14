@@ -1,11 +1,3 @@
-
-//Global Variables:
-var meal = [];
-var newMeal = [];
-var userMeal = [];
-
-
-
 // GET
 $.get('/api/mealMaster', function(data) {
   for (var i = 0; i < data.length; i++) {
@@ -41,7 +33,6 @@ $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
       .addClass('list-group-item')
       .text(data.Meals[i].meal);
     $('#yourMealList').append(yourMeals);
-    console.log(yourMeals);
   }
 });
 
