@@ -86,3 +86,25 @@ $('#genAgain').on('click', function(e) {
     $('#food7').text(currentMeals[6]);
   });
 });
+
+$('#mealSubmitBtn').on('click', function(e) {
+  console.log(`clicked`);
+  e.preventDefault();
+  let userMeal = {
+    UserId: localStorage.getItem('id'),
+    meal: $('#ownMeal')
+      .val()
+      .trim()
+  };
+  $.post('/api/meals', userMeal, function(data) {
+    location.reload();
+    $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+      for (var i = 0; i < data.Meals.length; i++) {
+        let yourMeals = $('<li>')
+          .addClass('list-group-item')
+          .text(data.Meals[i].meal);
+        $('#yourMealList').append(yourMeals);
+      }
+    });
+  });
+});
