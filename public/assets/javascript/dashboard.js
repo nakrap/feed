@@ -51,6 +51,12 @@ $('#genSeven').on('click', function(e) {
     for (var j = 0; j < 7; j++) {
       generatedMeals();
     }
-    console.log(currentMeals);
+    $('#food1').text(currentMeals[0]);
+    $('#food2').text(currentMeals[1]);
+    $('#food3').text(currentMeals[2]);
+    $('#food4').text(currentMeals[3]);
+    $('#food5').text(currentMeals[4]);
+    $('#food6').text(currentMeals[5]);
+    $('#food7').text(currentMeals[6]);
   });
 });
