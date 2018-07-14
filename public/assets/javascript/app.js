@@ -26,6 +26,7 @@ $('#register').on('click', function(event) {
   };
 
   $.post('/api/users', user, function(data) {
+    // console.log(req.get('x-auth-token'));
     console.log(data);
     localStorage.removeItem('id');
     localStorage.setItem('id', data.id);
@@ -33,3 +34,18 @@ $('#register').on('click', function(event) {
     window.location.replace('/dashboard');
   });
 });
+
+// $('#loginBtn').on('click', function(e) {
+//   e.preventDefault();
+//   var email = $('#loginName')
+//     .val()
+//     .trim();
+//   var password = $('#loginPassword')
+//     .val()
+//     .trim();
+//   const loginData = {
+//     email: email,
+//     password: password
+//   };
+//   $.post('/api/auth', loginData, function(data) {});
+// });
