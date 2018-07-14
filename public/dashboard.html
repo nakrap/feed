@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">FEED</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">feed</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -54,7 +54,7 @@
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-          <img src = "img/feedlogo.png" alt = "Feed Logo" height = "200px" width = "200px">
+          <img src = "img/feedlogocropped.png" alt = "Feed Logo" height = "170px" width = "270px">
           <br><br>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to your dashboard</h2>
         </div>
@@ -64,7 +64,7 @@
 
     <!-- Projects Section -->
     <!--DASHBOARD DELICIOUS CHOICES LIST-->
-    <section id="projects" class="projects-section bg-white">
+    <section id="projects" class="projects-section bg-white" style="padding:80px">
       <div class="container">
 
 
@@ -106,7 +106,7 @@
                     <form>
                       <div class="form-group">
                         <!-- <label for="exampleFormControlTextarea1">Example textarea</label> -->
-                        <textarea class="form-control" id="ownMeal" rows="3" placeholder="(i.e. Steak Enchiladas) Add one meal at a time up to as many times as you want!"></textarea>
+                        <textarea class="form-control" id="ownMeal" rows="3" placeholder="(i.e.  Seafood Paella) Add one meal at a time up to as many times as you want!"></textarea>
                         <p id="mealHelp"></p>
                       </div>
                       <button type="submit" class="btn btn-primary" id="mealSubmitBtn">Submit</button>
@@ -129,7 +129,8 @@
       </div>
       <div class="col-xl-4 col-lg-5">
         <div class="featured-text text-center text-lg-left">
-          <h4> Your List </h4>
+          <h4 id="yourList"> Your List </h4>
+          <br>
           <p class="text-black-50 mb-0">
               <ul class="list-group list-group-flush" id="yourMealList">
                 </ul>
@@ -141,75 +142,75 @@
     </div>
     <!-- Signup Section -->
     <!-- 7 DAY MEAL PLAN PAGE: -->
-    <section id="signup" class="signup-section">
+    <section id="signup" class="signup-section" style="padding: 80px">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 col-lg-8 mx-auto text-center">
-            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">Below is your random 7 day meal plan!</h2>
+          <div class="col-md-12 col-lg-10 mx-auto text-center">
+            <i class="far fa-paper-plane fa-2x mb-2 text-white showSevenIcon"></i>
+            <h2 class="text-white mb-5" id="showSeven">Below is your random 7 day meal plan!</h2>
          
              <div class = "row rowOne">
                 <div class="card col-md-3" style="width: 18rem;">
-                  <img class="card-img-top" height="180px" width="100px" src="img/graysand.png" alt="Card image cap">
+                  <img class="card-img-top" height="180px" width="100px" src="img/one.jpg" alt="Card image cap">
                   <div class="card-body">
                     <h5 class="card-title">ONE</h5>
-                    <p class="card-text" id="food1">Spaghetti & Meatballs</p>
-                    <a href="#" class="btn btn-primary">Recipe</a>
+                    <p class="card-text choiceName" id="food1">Spaghetti & Meatballs</p>
+                    <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                   </div>
                 </div>
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/greyfloral.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/two.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">TWO</h5>
-                      <p class="card-text" id="food2">Philadelphia Roll</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
+                      <p class="card-text choiceName" id="food2">Philadelphia Roll</p>
+                      <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                     </div>
                 </div>
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/linen.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/three.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">THREE</h5>
-                      <p class="card-text" id="food3">Cheeseburger & Fries</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
+                      <p class="card-text choiceName" id="food3">Cheeseburger & Fries</p>
+                      <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                     </div>
                 </div>
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/retro.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/four.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">FOUR</h5>
-                      <p class="card-text" id="food4">Pepperoni Pizza</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
+                      <p class="card-text choiceName" id="food4">Pepperoni Pizza</p>
+                      <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                     </div>
                 </div>
               </div>
               <br>
               <div class = "row rowTwo">
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/pattern.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/five.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">FIVE</h5>
-                      <p class="card-text" id="food5">Shrimp Fried Rice</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
+                      <p class="card-text choiceName" id="food5">Shrimp Fried Rice</p>
+                      <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                     </div>
                 </div>
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/square.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/six.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">SIX</h5>
-                      <p class="card-text" id="food6">Seafood Paella</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
+                      <p class="card-text choiceName" id="food6">Seafood Paella</p>
+                      <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                     </div>
                 </div>
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/light.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/seven.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">SEVEN</h5>
-                      <p class="card-text" id="food7"> Lobster & Butter Roll</p>
-                      <a href="#" class="btn btn-primary">Recipe</a>
+                      <p class="card-text choiceName" id="food7"> Lobster & Butter Roll</p>
+                      <a href="#" class="btn btn-primary" id="recipeBtn">Recipe</a>
                     </div>
                 </div>
                 <div class="card col-md-3" style="width: 18rem;">
-                    <img class="card-img-top" height="180px" width="100px" src="img/triangle.png" alt="Card image cap">
+                    <img class="card-img-top" height="180px" width="100px" src="img/taketwo.jpg" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">NOPE?</h5>
                       <p class="card-text">Click Again! to Regenerate</p>
@@ -283,7 +284,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-light small text-center text-white-50">
+    <footer class="bg-light small text-center">
       <div class="container">
         Copyright &copy; feed 2018
       </div>
