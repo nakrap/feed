@@ -25,6 +25,11 @@
   outline: none;
   background-color: transparent;
 }
+.aboutList {
+  background-color: rgba(255, 255, 255, 0.0);
+  border: none;
+  color: white;
+}
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 0;
@@ -138,6 +143,18 @@
 }
 .btn-primary:active {
   background-color: rgba(203, 25, 25, 0.5) !important;
+}
+#signup {
+  background-color: rgba(254,242,228,0.6);
+  color: rgb(140,106,78);
+}
+#submits {
+  background-color: rgba(254,242,228,0.6);
+  color: rgb(140,106,78);
+}
+#register {
+  background-color: rgba(254,242,228,0.6);
+  color: rgb(140,106,78);
 }
 .about-section {
   padding-top: 10rem;
