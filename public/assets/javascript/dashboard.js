@@ -61,12 +61,19 @@ $(document).ready(function() {
         generatedMeals();
       }
       $('#food1').text(currentMeals[0]);
+      $('#recipeBtn1').attr('value', currentMeals[0]);
       $('#food2').text(currentMeals[1]);
+      $('#recipeBtn2').attr('value', currentMeals[1]);
       $('#food3').text(currentMeals[2]);
+      $('#recipeBtn3').attr('value', currentMeals[2]);
       $('#food4').text(currentMeals[3]);
+      $('#recipeBtn4').attr('value', currentMeals[3]);
       $('#food5').text(currentMeals[4]);
+      $('#recipeBtn5').attr('value', currentMeals[4]);
       $('#food6').text(currentMeals[5]);
+      $('#recipeBtn6').attr('value', currentMeals[5]);
       $('#food7').text(currentMeals[6]);
+      $('#recipeBtn7').attr('value', currentMeals[6]);
     });
   };
 
