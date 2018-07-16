@@ -45,7 +45,7 @@ $(document).ready(function() {
     });
   });
 
-  $('#genSeven').on('click', function(e) {
+  const generateMeals = e => {
     e.preventDefault();
     $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
       let mealsArray = [];
@@ -68,32 +68,14 @@ $(document).ready(function() {
       $('#food6').text(currentMeals[5]);
       $('#food7').text(currentMeals[6]);
     });
+  };
+
+  $('#genSeven').on('click', function(e) {
+    generateMeals(e);
   });
 
   $('#genAgain').on('click', function(e) {
-    console.log('clicked');
-    e.preventDefault();
-    $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
-      let mealsArray = [];
-      for (var i = 0; i < data.Meals.length; i++) {
-        mealsArray.push(data.Meals[i].meal);
-      }
-      const currentMeals = [];
-      const generatedMeals = () => {
-        const aMeal = mealsArray[Math.floor(Math.random() * mealsArray.length)];
-        currentMeals.push(aMeal);
-      };
-      for (var j = 0; j < 7; j++) {
-        generatedMeals();
-      }
-      $('#food1').text(currentMeals[0]);
-      $('#food2').text(currentMeals[1]);
-      $('#food3').text(currentMeals[2]);
-      $('#food4').text(currentMeals[3]);
-      $('#food5').text(currentMeals[4]);
-      $('#food6').text(currentMeals[5]);
-      $('#food7').text(currentMeals[6]);
-    });
+    generateMeals(e);
   });
 
   $('#mealSubmitBtn').on('click', function(e) {
