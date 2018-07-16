@@ -2,7 +2,7 @@
 $(document).ready(function() {
   $.get('/api/mealMaster', function(data) {
     for (var i = 0; i < data.length; i++) {
-      var meal = $('<button>')
+      var meal = $('<li>')
         .attr('value', data[i].meal)
         .addClass('list-group-item list-group-item-action meals')
         .text(data[i].meal);
@@ -11,9 +11,7 @@ $(document).ready(function() {
 
     $('.meals').on('click', function(e) {
       e.preventDefault();
-      let newMeal = $(this)
-        .val()
-        .trim();
+      let newMeal = $(this).attr('value');
       let userMeal = {
         UserId: localStorage.getItem('id'),
         meal: newMeal
