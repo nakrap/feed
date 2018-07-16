@@ -329,3 +329,6 @@ footer {
   padding: 5rem 0;
   color: rgb(140,106,78) !important;
 }
+.hover-meal:hover {
+  background-color: rgba(203,25,25,0.5);
+}
