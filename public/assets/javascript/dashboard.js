@@ -60,20 +60,17 @@ $(document).ready(function() {
       for (var j = 0; j < 7; j++) {
         generatedMeals();
       }
-      $('#food1').text(currentMeals[0]);
-      $('#recipeBtn1').attr('value', currentMeals[0]);
-      $('#food2').text(currentMeals[1]);
-      $('#recipeBtn2').attr('value', currentMeals[1]);
-      $('#food3').text(currentMeals[2]);
-      $('#recipeBtn3').attr('value', currentMeals[2]);
-      $('#food4').text(currentMeals[3]);
-      $('#recipeBtn4').attr('value', currentMeals[3]);
-      $('#food5').text(currentMeals[4]);
-      $('#recipeBtn5').attr('value', currentMeals[4]);
-      $('#food6').text(currentMeals[5]);
-      $('#recipeBtn6').attr('value', currentMeals[5]);
-      $('#food7').text(currentMeals[6]);
-      $('#recipeBtn7').attr('value', currentMeals[6]);
+
+      const getMeal = mealName => {
+        return localStorage.getItem(mealName);
+      };
+      for (var a = 1; a < 8; a++) {
+        var b = a - 1;
+        localStorage.removeItem(`meal${a}`);
+        localStorage.setItem(`meal${a}`, currentMeals[b]);
+        $(`#food${a}`).text(getMeal(`meal${a}`));
+        $(`#recipeBtn${a}`).attr('value', currentMeals[b]);
+      }
     });
   };
 
@@ -112,3 +109,18 @@ $(document).ready(function() {
     window.location.replace('/');
   });
 });
+
+const persistentMeals = () => {
+  const setMeals = () => {
+    const getMeal = mealName => {
+      return localStorage.getItem(mealName);
+    };
+    for (var a = 1; a < 8; a++) {
+      $(`#food${a}`).text(getMeal(`meal${a}`));
+    }
+  };
+  const mealUno = localStorage.getItem('meal1');
+  mealUno ? setMeals() : null;
+};
+
+persistentMeals();
