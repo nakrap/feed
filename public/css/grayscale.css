@@ -331,4 +331,5 @@ footer {
 }
 .hover-meal:hover {
   background-color: rgba(203,25,25,0.5);
+  opacity: .2;
 }

@@ -1,26 +1,24 @@
 // GET
 $(document).ready(function() {
-  $.get('/api/mealMaster', function(data) {
+  $.get("/api/mealMaster", function(data) {
     for (var i = 0; i < data.length; i++) {
-      var meal = $('<button>')
-        .attr('value', data[i].meal)
-        .addClass('list-group-item list-group-item-action meals')
+      var meal = $("<li>")
+        .attr("value", data[i].meal)
+        .addClass("list-group-item list-group-item-action meals")
         .text(data[i].meal);
-      $('#foods').append(meal);
+      $("#foods").append(meal);
     }
 
-    $('.meals').on('click', function(e) {
+    $(".meals").on("click", function(e) {
       e.preventDefault();
-      let newMeal = $(this)
-        .val()
-        .trim();
+      let newMeal = $(this).attr("value");
       let userMeal = {
-        UserId: localStorage.getItem('id'),
+        UserId: localStorage.getItem("id"),
         meal: newMeal
       };
       // api/meals:
       // POST
-      $.post('/api/meals', userMeal, function(data) {
+      $.post("/api/meals", userMeal, function(data) {
         location.reload();
       });
     });
@@ -28,28 +26,28 @@ $(document).ready(function() {
 
   // api/users
   // GET BY ID
-  $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+  $.get(`/api/users/${localStorage.getItem("id")}`, function(data) {
     for (var i = 0; i < data.Meals.length; i++) {
-      let yourMeals = $('<li>')
-        .addClass('list-group-item hover-meal')
+      let yourMeals = $("<li>")
+        .addClass("list-group-item hover-meal")
         .text(data.Meals[i].meal)
-        .attr('value', data.Meals[i].id);
-      $('#yourMealList').append(yourMeals);
+        .attr("value", data.Meals[i].id);
+      $("#yourMealList").append(yourMeals);
     }
-    $('.hover-meal').on('click', function() {
+    $(".hover-meal").on("click", function() {
       const val = $(this).val();
       console.log(val);
       $.ajax({
         url: `/api/meals/${val}`,
-        type: 'DELETE'
+        type: "DELETE"
       });
       window.location.reload();
     });
   });
 
-  $('#genSeven').on('click', function(e) {
+  const generateMeals = e => {
     e.preventDefault();
-    $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+    $.get(`/api/users/${localStorage.getItem("id")}`, function(data) {
       let mealsArray = [];
       for (var i = 0; i < data.Meals.length; i++) {
         mealsArray.push(data.Meals[i].meal);
@@ -62,66 +60,89 @@ $(document).ready(function() {
       for (var j = 0; j < 7; j++) {
         generatedMeals();
       }
-      $('#food1').text(currentMeals[0]);
-      $('#food2').text(currentMeals[1]);
-      $('#food3').text(currentMeals[2]);
-      $('#food4').text(currentMeals[3]);
-      $('#food5').text(currentMeals[4]);
-      $('#food6').text(currentMeals[5]);
-      $('#food7').text(currentMeals[6]);
-    });
-  });
 
-  $('#genAgain').on('click', function(e) {
-    console.log('clicked');
-    e.preventDefault();
-    $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
-      let mealsArray = [];
-      for (var i = 0; i < data.Meals.length; i++) {
-        mealsArray.push(data.Meals[i].meal);
-      }
-      const currentMeals = [];
-      const generatedMeals = () => {
-        const aMeal = mealsArray[Math.floor(Math.random() * mealsArray.length)];
-        currentMeals.push(aMeal);
+      const getMeal = mealName => {
+        return localStorage.getItem(mealName);
       };
-      for (var j = 0; j < 7; j++) {
-        generatedMeals();
+      for (var a = 1; a < 8; a++) {
+        var b = a - 1;
+        localStorage.removeItem(`meal${a}`);
+        localStorage.setItem(`meal${a}`, currentMeals[b]);
+        $(`#food${a}`).text(getMeal(`meal${a}`));
+        $(`#recipeBtn${a}`).attr("value", currentMeals[b]);
       }
-      $('#food1').text(currentMeals[0]);
-      $('#food2').text(currentMeals[1]);
-      $('#food3').text(currentMeals[2]);
-      $('#food4').text(currentMeals[3]);
-      $('#food5').text(currentMeals[4]);
-      $('#food6').text(currentMeals[5]);
-      $('#food7').text(currentMeals[6]);
     });
+  };
+
+  $("#genSeven").on("click", function(e) {
+    generateMeals(e);
+    window.location.reload();
   });
 
-  $('#mealSubmitBtn').on('click', function(e) {
+  $("#genAgain").on("click", function(e) {
+    generateMeals(e);
+    window.location.reload();
+  });
+
+  $("#mealSubmitBtn").on("click", function(e) {
     console.log(`clicked`);
     e.preventDefault();
     let userMeal = {
-      UserId: localStorage.getItem('id'),
-      meal: $('#ownMeal')
+      UserId: localStorage.getItem("id"),
+      meal: $("#ownMeal")
         .val()
         .trim()
     };
-    $.post('/api/meals', userMeal, function(data) {
+    $.post("/api/meals", userMeal, function(data) {
       location.reload();
-      $.get(`/api/users/${localStorage.getItem('id')}`, function(data) {
+      $.get(`/api/users/${localStorage.getItem("id")}`, function(data) {
         for (var i = 0; i < data.Meals.length; i++) {
-          let yourMeals = $('<li>')
-            .addClass('list-group-item')
+          let yourMeals = $("<li>")
+            .addClass("list-group-item")
             .text(data.Meals[i].meal);
-          $('#yourMealList').append(yourMeals);
+          $("#yourMealList").append(yourMeals);
         }
       });
     });
   });
 
-  $('#logout').on('click', function(e) {
+  $("#logout").on("click", function(e) {
     e.preventDefault();
-    window.location.replace('/');
+    window.location.replace("/");
   });
 });
+
+const persistentMeals = () => {
+  const setMeals = () => {
+    const getMeal = mealName => {
+      return localStorage.getItem(mealName);
+    };
+    for (var a = 1; a < 8; a++) {
+      $(`#food${a}`).text(getMeal(`meal${a}`));
+      $(`#recipeBtn${a}`).attr("value", getMeal(`meal${a}`));
+    }
+    const genMealLinks = () => {
+      const mealLink = a => {
+        let meal = $(`#recipeBtn${a}`).attr("value");
+        const concatMeal = meal.split(" ").join("+");
+        const queryURL = `http://api.yummly.com/v1/api/recipes?_app_id=c80eb1dc&_app_key=bcb2227975b7e809f5979400cec566a4&q=${concatMeal}`;
+        $.get(queryURL, function(data) {
+          console.log(data.matches[0].id);
+          $(`#recipeBtn${a}`).attr(
+            "href",
+            `https://www.yummly.com/recipe/${data.matches[0].id}`
+          );
+        });
+      };
+      for (var z = 1; z < 8; z++) {
+        mealLink(z);
+      }
+    };
+    genMealLinks();
+  };
+
+  const mealUno = localStorage.getItem("meal1");
+  mealUno ? setMeals() : null;
+};
+
+persistentMeals();
