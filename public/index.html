@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>FEED HOMEPAGE</title>
+    <link rel="icon" type="image/png" href="/img/favicon2.jpg" sizes="32x32">
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -15,6 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="css/grayscale.min.css" rel="stylesheet">
     <link href="css/grayscale.css" rel="stylesheet">
+
   </head>
   
   <body id="page-top">
@@ -42,7 +44,7 @@
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-          <img src = "img/feedlogocropped.png" alt = "Feed Logo" height = "250px" width = "350px">
+          <img src = "img/feedlogocropped.png" alt = "Feed Logo" height = "274px" width = "453px">
           <br><br>
           <h2 class="text-white-50 mx-auto mt-2 mb-5">A 7 day meal plan generator based on your preferences</h2>
           <a href="#about" class= "js-scroll-trigger"><button href="#about" class="btn btn-primary js-scroll-trigger" id="loginBtn">Login/Sign Up</button></a>
@@ -79,17 +81,17 @@
                   <form action="/">
                       <div class="form-group">
                           <label for="name">First Name</label>
-                          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" name="name">
+                          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name (*required)" name="name" required>
                           <p class="help is-danger" style="display: none" id="firstNameHelp">This field is required</p>
                       </div>
                       <div class="form-group">
                         <label for="name">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" name="name">
+                        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name (*required)" name="name" required>
                         <p class="help is-danger" style="display: none" id="lastNameHelp">This field is required</p>
                       </div>
                       <div class="form-group">
                           <label for="newemail">Email:</label>
-                          <input type="email" class="form-control" id="emailInput" placeholder="Enter new email" name="newemail">
+                          <input type="email" class="form-control" id="emailInput" placeholder="Enter a valid email address (must include @ and .com)" name="newemail" required>
                           <p class="help is-danger" style="display: none" id="emailInputHelp">This field is required</p>
                       </div>
                       <div class="form-group">
@@ -99,7 +101,7 @@
                       </div>
                       <div class="form-group">
                         <label for="newpwd">Password:</label>
-                        <input type="password" class="form-control" id="password" placeholder="New password" name="newpwd">
+                        <input type="password" class="form-control" id="password" placeholder="At least 6 characters, including UPPER/lowercase and numbers" name="newpwd">
                         <p class="help is-danger" style="display: none" id="passwordHelp">This field is required</p>
                       </div>
                       <div class="form-group">
@@ -201,6 +203,8 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.js"></script>
+    <script src="js/login_vali.js"></script>
+    <script src="js/signup_vali.js"></script>
     <!-- Routes -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="./assets/javascript/app.js"></script>
