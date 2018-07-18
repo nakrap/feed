@@ -27,32 +27,32 @@
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",
-    "url": "http://twitter.com/davegandy"
+    "url": "https://twitter.com/davegandy"
   },
   "bugs": {
-    "url": "http://github.com/FortAwesome/Font-Awesome/issues"
+    "url": "https://github.com/FortAwesome/Font-Awesome/issues"
   },
   "bundleDependencies": false,
   "contributors": [
     {
       "name": "Brian Talbot",
-      "url": "http://twitter.com/talbs"
+      "url": "https://twitter.com/talbs"
     },
     {
       "name": "Travis Chase",
-      "url": "http://twitter.com/supercodepoet"
+      "url": "https://twitter.com/supercodepoet"
     },
     {
       "name": "Rob Madole",
-      "url": "http://twitter.com/robmadole"
+      "url": "https://twitter.com/robmadole"
     },
     {
       "name": "Geremia Taglialatela",
-      "url": "http://twitter.com/gtagliala"
+      "url": "https://twitter.com/gtagliala"
     },
     {
       "name": "Mike Wilkerson",
-      "url": "http://twitter.com/mw77"
+      "url": "https://twitter.com/mw77"
     }
   ],
   "dependencies": {},

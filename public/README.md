@@ -1,6 +1,6 @@
 # [Start Bootstrap - Grayscale](https://startbootstrap.com/template-overviews/grayscale/)
 
-[Grayscale](http://startbootstrap.com/template-overviews/grayscale/) is a multipurpose, one page HTML theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+[Grayscale](https://startbootstrap.com/template-overviews/grayscale/) is a multipurpose, one page HTML theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
 
 ## Preview
 
@@ -52,7 +52,7 @@ Start Bootstrap has a public Slack channel which is a great place to ask questio
 
 ## Bugs and Issues
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-grayscale/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/grayscale/).
+Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-grayscale/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/template-overviews/grayscale/).
 
 ## About
 
@@ -61,13 +61,13 @@ Start Bootstrap is an open source library of free Bootstrap templates and themes
 * https://startbootstrap.com
 * https://twitter.com/SBootstrap
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**, Owner of [Blackrock Digital](https://blackrockdigital.io/).
 
-* http://davidmiller.io
+* https://davidmiller.io
 * https://twitter.com/davidmillerskt
 * https://github.com/davidtmiller
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
 
 ## Copyright and License
 

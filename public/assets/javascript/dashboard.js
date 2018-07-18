@@ -130,7 +130,7 @@ const persistentMeals = () => {
           console.log(data.matches[0].id);
           $(`#recipeBtn${a}`).attr(
             "href",
-            `http://www.yummly.com/recipe/${data.matches[0].id}`
+            `https://www.yummly.com/recipe/${data.matches[0].id}`
           );
         });
       };
