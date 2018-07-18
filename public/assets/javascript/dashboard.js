@@ -125,12 +125,12 @@ const persistentMeals = () => {
       const mealLink = a => {
         let meal = $(`#recipeBtn${a}`).attr("value");
         const concatMeal = meal.split(" ").join("+");
-        const queryURL = `//api.yummly.com/v1/api/recipes?_app_id=c80eb1dc&_app_key=bcb2227975b7e809f5979400cec566a4&q=${concatMeal}`;
+        const queryURL = `https://api.yummly.com/v1/api/recipes?_app_id=c80eb1dc&_app_key=bcb2227975b7e809f5979400cec566a4&q=${concatMeal}`;
         $.get(queryURL, function (data) {
           console.log(data.matches[0].id);
           $(`#recipeBtn${a}`).attr(
             "href",
-            `//www.yummly.com/recipe/${data.matches[0].id}`
+            `http://www.yummly.com/recipe/${data.matches[0].id}`
           );
         });
       };
